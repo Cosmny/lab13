@@ -32,8 +32,6 @@ def average(temps):
 
 user = input('Enter temperatures for each day separated by space: ')
 frir = [int(x) for x in user.split()]
-print(frir)
-print(sum(frir))
 print(f'\nNumber of heat waves: {heatwave(frir)}')
 print(f'Longest cold streak: {coldStreak(frir)} days')
 print(f'Average temperature: {average(frir)}°C')
