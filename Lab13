@@ -1,0 +1,39 @@
+def coldStreak(temps):
+  num = 0
+  counts = 0
+  for i in range(len(temps)):
+    if temps[i] < 15:
+      num += 1
+    else:
+      num = 0
+    if counts <= num:
+      counts = num
+  return counts
+
+def heatwave(temps):
+  num = 0
+  count = 0
+  for i in range(len(temps)):
+    if temps[i] >= 30:
+      num += 1
+    else:
+      num -= num
+    if num == 3:
+      count += 1
+  return count
+
+
+def average(temps):
+  sumo = float(sum(temps))
+  naverage = int((sumo / len(temps))*100)
+  average = naverage / 100
+  return average
+
+
+user = input('Enter temperatures for each day separated by space: ')
+frir = [int(x) for x in user.split()]
+print(frir)
+print(sum(frir))
+print(f'\nNumber of heat waves: {heatwave(frir)}')
+print(f'Longest cold streak: {coldStreak(frir)} days')
+print(f'Average temperature: {average(frir)}°C')
